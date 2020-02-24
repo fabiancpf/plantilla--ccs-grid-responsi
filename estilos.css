@@ -1,0 +1,132 @@
+* {
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: url('1.jpg');
+	background-attachment: fixed;
+}
+
+.content {
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	display: grid;
+	grid-gap: 8px;
+	grid-template-columns: 200px 1fr 200px;
+	grid-template-rows: repeat(3, auto);
+
+	grid-template-areas:
+		'heder     heder    heder'
+		'saibar-1  main     saibar-2'
+		'footer    footer   footer';
+}
+
+.content .heder,
+.content .main,
+.content .saibar-1,
+.content .saibar-2,
+.content .footer {
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.content .heder {
+	grid-area: heder;
+	background: blue;
+	color: white;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	padding: 20px 6%;
+}
+
+.logo {
+	cursor: pointer;
+}
+
+.nav_links {
+	list-style: none;
+}
+
+.nav_links li {
+	display: inline-block;
+	padding: 5px 20px;
+}
+
+.nav_links li a {
+	transition: all 0.3s ease 0s;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav_links li a.active,
+.nav_links li a:hover {
+	background: white;
+	color: black;
+}
+
+.content .main {
+	grid-area: main;
+	background: white;
+	text-align: justify;
+}
+
+.content .saibar-1 {
+	grid-area: saibar-1;
+	background: orange;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content .saibar-2 {
+	grid-area: saibar-2;
+	background: orange;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content .footer {
+	grid-area: footer;
+	background: paleturquoise;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) 
+@media only screen and (min-width: 600px) {
+}
+*/
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	.content {
+		grid-gap: 5px;
+		grid-template-areas:
+			'heder     heder    heder'
+			'main   main     saibar-1'
+			'saibar-2 saibar-2 saibar-2'
+			'footer    footer   footer';
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	.content {
+		grid-gap: 5px;
+		grid-template-areas:
+			'heder     heder     heder'
+			'main      main      main'
+			'saibar-1  saibar-1  saibar-2'
+			'footer    footer    footer';
+	}
+}
